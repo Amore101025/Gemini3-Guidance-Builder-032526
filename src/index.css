@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-border: var(--color-border);
+  --color-card: var(--color-card);
+  --color-card-foreground: var(--color-card-foreground);
+}
+
+@layer base {
+  :root {
+    --color-background: #ffffff;
+    --color-foreground: #0f172a;
+    --color-muted: #f1f5f9;
+    --color-muted-foreground: #64748b;
+    --color-border: #e2e8f0;
+    --color-card: #ffffff;
+    --color-card-foreground: #0f172a;
+    
+    /* Default: Classic Blue */
+    --color-primary: #0F4C81;
+    --color-primary-foreground: #ffffff;
+  }
+
+  .dark {
+    --color-background: #0f172a;
+    --color-foreground: #f8fafc;
+    --color-muted: #1e293b;
+    --color-muted-foreground: #94a3b8;
+    --color-border: #334155;
+    --color-card: #1e293b;
+    --color-card-foreground: #f8fafc;
+  }
+
+  /* Pantone Themes */
+  .theme-classic-blue { --color-primary: #0F4C81; --color-primary-foreground: #ffffff; }
+  .theme-living-coral { --color-primary: #FF6F61; --color-primary-foreground: #ffffff; }
+  .theme-ultra-violet { --color-primary: #5F4B8B; --color-primary-foreground: #ffffff; }
+  .theme-greenery { --color-primary: #88B04B; --color-primary-foreground: #ffffff; }
+  .theme-rose-quartz { --color-primary: #F7CAC9; --color-primary-foreground: #0f172a; }
+  .theme-serenity { --color-primary: #91A8D0; --color-primary-foreground: #0f172a; }
+  .theme-marsala { --color-primary: #955251; --color-primary-foreground: #ffffff; }
+  .theme-radiant-orchid { --color-primary: #B565A7; --color-primary-foreground: #ffffff; }
+  .theme-emerald { --color-primary: #009473; --color-primary-foreground: #ffffff; }
+  .theme-tangerine-tango { --color-primary: #DD4124; --color-primary-foreground: #ffffff; }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
